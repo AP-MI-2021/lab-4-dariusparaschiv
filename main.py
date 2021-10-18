@@ -71,25 +71,34 @@ def printMenu():
     print("1. Citire lista")
     print("2. Elimina numerele prime")
     print("3. Verificati daca media aritmetica a numerelor este mai mare decat n")
-    #print("4. Adauga dupa fiecare element numarul de divizor proprii")
+    print("4. Adauga dupa fiecare element numarul de divizor proprii")
     #print("5. Prelucrare lista")
     print("6. Iesire")
     print("7. Afisare lista")
 
 
 def count_div(n):
+    if n == 1:
+        return 0
+    if n == 2:
+        return 0
     k = 0
-    for i in range(1, n+1):
+    for i in range(2, n):
         if n % i == 0:
             k = k+1
     return k
 
 
 def test_count_div():
-    assert count_div(1) == 1
-    assert count_div(2) == 2
-    assert count_div(5) == 2
-    assert count_div(10) == 4
+    assert count_div(1) == 0
+    assert count_div(2) == 0
+    assert count_div(5) == 0
+    assert count_div(10) == 2
+    assert count_div(19) == 0
+    assert count_div(5) == 0
+    assert count_div(12) == 4
+    assert count_div(9) == 1
+
 
 
 def list_divi(lst):
@@ -100,7 +109,7 @@ def list_divi(lst):
     '''
     newlst=[]
     for x in lst:
-        newlst.append((x))
+        newlst.append(x)
         newlst.append(count_div(x))
     return newlst
 
@@ -123,7 +132,7 @@ def main():
     test_delete_prime()
     test_arithmetic()
     test_count_div()
-    #test_list_divi()
+    test_list_divi()
     lst = []
     while True:
         printMenu()
