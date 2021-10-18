@@ -71,8 +71,8 @@ def printMenu():
     print("1. Citire lista")
     print("2. Elimina numerele prime")
     print("3. Verificati daca media aritmetica a numerelor este mai mare decat n")
-    print("4. Adauga dupa fiecare element numarul de divizor proprii")
-    print("5. Prelucrare lista")
+    #print("4. Adauga dupa fiecare element numarul de divizor proprii")
+    #print("5. Prelucrare lista")
     print("6. Iesire")
     print("7. Afisare lista")
 
@@ -109,6 +109,14 @@ def test_list_divi():
     assert list_divi([19, 5, 24, 12, 9]) == [19, 0, 5, 0, 24, 6, 12, 4, 9, 1]
 
 
+def modify_list(lst):
+    '''
+    Afiseaza lista obtinuta din lista initialia in care nr sunt inlocuite cu un tuplu, unde
+    pe prima pzitie este nr, pe a doua indexul elementului si pe a treia nr de aparitii.
+    :param lst: lista cu numere
+    :return: lista modificata
+    '''
+
 
 def main():
     test_is_prime()
@@ -132,8 +140,12 @@ def main():
                 print("NU")
         elif optiune == "4":
             break
+        elif optiune == "6":
+            break
         elif optiune == "7":
             print(lst)
+        else:
+            print("optiune invalida")
 
 
 main()
